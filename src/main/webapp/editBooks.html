@@ -1,0 +1,54 @@
+<style> 
+.textbox { 
+    border: 3px inset #FFA5A5; 
+    outline:0; 
+    height:25px; 
+    width: 275px; 
+  } 
+  .c{
+	padding-top: 50px; 
+	padding-right: 30px;  
+	padding-bottom: 50px; 
+	padding-left: 80px;
+}
+</style>
+
+<body>
+<div class="c" ng-controller="bookCtrl" top-padding: 40px;>
+
+	<form action="changeBooks" method="post">
+	<p> The current title is :</p><p name="myName1" value="books.title" ng-model="books.title" >{{books.title}}</p>
+	<p>	Enter Book title: <input class="textbox" type="text" ng-pattern="/^[a-zA-Z0-9]*$/" name="myName"  ng-model="title"  value="books.title"/>
+	the book id is :<input class="textbox" type="text" name="bookId" value="books.bookId" ng-model="books.bookId"  />
+	</p>
+
+
+<h3>1. Select new Authors</h3>
+    <label for="a in authors1">Multiple select:</label>
+    <select  ng-options=" a.authorName for a in authors1" multiple ng-model="selectedAuthors">
+      <option ></option>
+    </select>
+    <br />
+    
+    <h3>2. Selecting new Genres</h3>
+    <label for="g in genre1">Multiple select:</label>
+    <select  ng-options=" g.genre_name for g in genre1" multiple ng-model="selectedGenres">
+      <option ></option>
+    </select>
+    <br />
+    
+    <h3>3. Select new Publisher</h3>
+    <label for="p in publisher1">Single select:</label>
+     <select  ng-options=" p.publisherName for p in publisher1" ng-model="selectedPublisher">
+      <option ></option>
+    </select>
+    <br />
+    <br />
+	
+	<input type="submit" ng-click="changeBooks()" value="Edit"/>
+
+
+</form>
+
+</div>
+</body>

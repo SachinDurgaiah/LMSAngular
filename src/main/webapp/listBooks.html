@@ -1,0 +1,48 @@
+<style>
+.c{
+padding-top: 50px; 
+padding-right: 30px;  
+padding-bottom: 50px; 
+padding-left: 80px;
+}
+
+</style>
+<body>
+
+<div class="c" ng-controller="bookCtrl" top-padding: 60px;>
+
+
+Search for books : <input type="text" ng-model="searchBox" placeholder="Search for books "></br>
+
+<dir-pagination-controls
+       max-size="5"
+       direction-links="true"
+       boundary-links="true" >
+</dir-pagination-controls>
+
+<div class="row">
+	<div class="col-md-6">
+<table class="table border="2" id="booksTable" class="table">
+	<tr>
+		
+		<th>Book title</th>
+		<th>Author Name</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+
+	<tr ng-repeat="b in book123 | filter:searchBox | itemsPerPage:5">
+		
+		<td>{{b.title}}</td>
+		<td><li ng-repeat="author in b.author ">{{author.authorName}}</li></td>
+		<td><button type="button"  class="btn btn btn-primary" 
+					ng-click="getBookByID(b.bookId)">Edit</button></td>
+		<td><button class="btn btn-danger" data-toggle="modal"
+				ng-click="deleteBook(b.bookId)">Delete</button></td>
+	</tr>
+</table>
+</div>
+</div>
+
+</div>
+</body>

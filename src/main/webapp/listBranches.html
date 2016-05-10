@@ -1,0 +1,53 @@
+<style>
+.c{
+padding-top: 50px; 
+padding-right: 30px;  
+padding-bottom: 50px; 
+padding-left: 80px;
+}
+.textbox { 
+    border: 3px inset #FFA5A5; 
+    outline:0; 
+    height:25px; 
+    width: 275px; 
+  }
+</style>
+
+<body>
+<div class="c"  ng-controller="branchCtrl">
+<dir-pagination-controls
+       max-size="5"
+       direction-links="true"
+       boundary-links="true" >
+</dir-pagination-controls>
+Search for Branch : <input class="textbox" type="text" ng-model="searchBox" placeholder="Search for Branch "></br>
+<div class="row">
+	<div class="col-md-6">
+<table class="table border="2" id="branchTable" class="table">
+	<tr>
+		
+		<th>Branch name</th>
+		<th>Address</th>
+		
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+
+<tr dir-paginate="b in branch | filter:searchBox | itemsPerPage:5">
+	
+		
+		<td>{{b.branchName}}</td>
+		<td>{{b.branchAddress}}</td>
+	
+	
+		<td ><button type="button"  class="btn btn btn-primary"
+					ng-click="getBranchID1(b.branchId)">Edit</button></td>
+		<td><button class="btn btn-danger" data-toggle="modal"
+				ng-click="deleteBranch(b.branchId)">Delete</button></td>
+	</tr>
+</table>
+</div>
+</div>
+
+</div>
+</body>

@@ -1,0 +1,33 @@
+<style> 
+.textbox { 
+    border: 3px inset #FFA5A5; 
+    outline:0; 
+    height:25px; 
+    width: 275px; 
+  } 
+  .c{
+	padding-top: 50px; 
+	padding-right: 30px;  
+	padding-bottom: 50px; 
+	padding-left: 80px;
+}
+</style>
+
+<body>
+<div class="c" ng-controller="publisherCtrl">
+
+<form name="myForm">
+
+Enter Publisher Name    : <input class="textbox" type="text" name="publisherName" ng-model="publisher.publisherName" ng-pattern="/^[a-zA-Z0-9]*$/" validation="text|min_len:3|max_len:40|required"  /><p>Minimum of 3 characters and  no special characters</p>
+ 
+Enter Publisher Address : <input class="textbox" type="text" ng-pattern="/^[a-zA-Z0-9]*$/" validation="text|min_len:3|max_len:40|required" name="myAddress" ng-model="publisher.publisherAddress"  required/></br>
+
+<span ng-show="myForm.myName.$touched && myForm.myName.$invalid && myForm.myAddress.$touched && myForm.myAddress.$invalid">The name with address is required.</span>
+</p>
+</form>
+ <div ng-message="pattern">No characters allowed</div>
+		
+		</br><input type="submit" ng-click="addPublisher()" value="Add"/>
+</div>
+</body>
+

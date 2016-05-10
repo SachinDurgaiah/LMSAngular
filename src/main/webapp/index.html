@@ -1,0 +1,107 @@
+<title>Library Management System</title>
+
+
+<!-- Bootstrap core CSS -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<!-- Bootstrap theme -->
+<link href="./resources/bootstrap-theme.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+
+ <link href="./resources/theme.css"	rel="stylesheet">
+ 
+	
+<script src="./resources/ie-emulation-modes-warning.js"></script>
+
+<script src="./resources/ie10-viewport-bug-workaround.js"></script>
+
+<script data-require="angular.js@*" data-semver="1.2.13"
+	src="http://code.angularjs.org/1.2.13/angular.js"></script>
+<script data-require="angular-route.js@*" data-semver="1.2.13"
+	src="http://code.angularjs.org/1.2.13/angular-route.js"></script>
+<script data-require="angular-route.js@*" data-semver="1.2.13"
+	src="http://code.angularjs.org/1.2.13/angular-cookies.js"></script>
+<script src="./resources/app.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+<!-- <style id="holderjs-style" type="text/css"></style> -->
+</head>
+
+<html lang="en" ng-app="libraryApp">
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+	<!-- Fixed navbar -->
+	
+	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse>
+			
+						<i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand" href="home1.html">
+                    LIBRARY
+                </a>
+			
+			</div>
+			  
+			<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="#/home">Home</a></li>
+					<li class="dropdown"><a href="javascript:;" class="dropdown-toggle"
+						data-toggle="dropdown">Administrator<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#/listAuthors">Author Services</a></li>
+							<li><a href="#/addauthor">Add a new author</a></li>
+							<li><a href="#/listBooks">Book Services</a></li>
+							<li><a href="#/addBook">Add a new book</a></li>
+							<li><a href="#/listPublisher">Publisher Services</a></li>
+							<li><a href="#/addPublisher">Add a new publisher</a></li>
+							<li><a href="#/listBorrowers">Borrower Services</a></li>
+							<li><a href="#/addBorrower">Add a new borrower</a></li>
+							<li><a href="#/listBranches">Branch Services</a></li>
+							<li><a href="#/addBranch">Add a new Library branch</a></li>
+							<li><a href="#/renewAuthentication">Renew book due date</a></li>
+							
+						</ul></li>
+					
+					<li class="dropdown"><a href="javascript:;" class="dropdown-toggle"
+						data-toggle="dropdown">Librarian<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#/librarybranch">Update library details</a></li>
+							<li><a href="#/librarian_addBooks">Add books</a></li>
+							
+						</ul></li>
+				
+					<li class="dropdown"><a href="javascript:;" class="dropdown-toggle"
+						data-toggle="dropdown">Borrower<span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#/CheckIn">Return a book</a></li>
+							<li><a href="#/CheckOut">Checkout a book</a></li>
+							
+						</ul></li>
+				</ul>
+			</div>
+			</div>
+			<!--/.nav-collapse -->
+		</nav>
+	
+
+	<div class="view-container">
+		<section data-ng-view="" id="content" class="animate-fade-up"></section>
+		
+	</div>
+
+	<script src="./resources/jquery.min.js"></script>
+	<script src="./resources/bootstrap.min.js"></script>
+	<script src="./resources/docs.min.js"></script>
+	<script src="./resources/dirPagination.js"></script>
+	<!-- Core JavaScript Files -->
+    
+    <script src="js/jquery.easing.min.js"></script>	
+	<script src="js/jquery.scrollTo.js"></script>
+	<script src="js/wow.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.js"></script>
+
+</body>
+</html>

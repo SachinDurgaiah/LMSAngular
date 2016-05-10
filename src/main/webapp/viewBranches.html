@@ -1,0 +1,40 @@
+<div ng-controller="librarianCtrl">
+<nav>
+	<ul class="pagination">
+		<li><a href="pageAuthors?pageNo=1">1</a></li>
+		<li><a href="pageAuthors?pageNo=2">2</a></li>
+	</ul>
+</nav>
+<div class="row">
+	<div class="col-md-6">
+<table class="table border="2" id="branchTable" class="table">
+	<tr>
+		
+		<th>Branch name</th>
+		<th>Address</th>
+		
+		<th>Update Details</th>
+
+	</tr>
+
+	<tr ng-repeat="b in branch">
+		
+		<td>{{b.branchName}}</td>
+		<td>{{b.branchAddress}}</td>
+	
+		
+		<td><button class="btn btn-success"
+				href="editBranch?b.bookId"
+				data-target="#myModal1" data-toggle="modal">Edit</button></td>
+
+	</tr>
+</table>
+</div>
+</div>
+
+<div id="myModal1" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content"></div>
+	</div>
+</div>
+</div>

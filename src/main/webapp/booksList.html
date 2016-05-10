@@ -1,0 +1,55 @@
+<style> 
+.textbox { 
+    border: 3px inset #FFA5A5; 
+    outline:0; 
+    height:25px; 
+    width: 275px; 
+  } 
+  .c{
+	padding-top: 50px; 
+	padding-right: 30px;  
+	padding-bottom: 50px; 
+	padding-left: 80px;
+}
+</style>
+
+<body>
+<div class="c" ng-controller="addBookCopies">
+<dir-pagination-controls
+       max-size="5"
+       direction-links="true"
+       boundary-links="true" >
+</dir-pagination-controls>
+
+<form name="myForm">
+<p>Enter the number of copies: 
+<input class="textbox" name="myName" ng-model="noOfCopies" required>
+<span ng-show="myForm.noOfCopies.$touched && myForm.noOfCopies.$invalid">The name is required.</span>
+</p>
+
+<div class="row">
+	<div class="col-md-6">
+<table class="table border="2" id="booksTable" class="table">
+	<tr>
+		
+		<th>Book title</th>
+		<th>Author Name</th>
+		<th>Add</th>
+		
+	</tr>
+
+	<tr dir-paginate="b221 in bookList | itemsPerPage:5">
+		
+		<td>{{b221.title}}</td>
+		<td><li ng-repeat="author in b221.author">{{author.authorName}}</li></td>
+
+		<td><button class="btn btn-danger" data-toggle="modal"
+				ng-click="bookSelected(b221.bookId)">Add</button></td>
+	</tr>
+</table>
+</div>
+</div>
+
+
+</div>
+</body>

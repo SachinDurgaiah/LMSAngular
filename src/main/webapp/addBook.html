@@ -1,0 +1,53 @@
+ 
+<style> 
+.textbox { 
+    border: 3px inset #FFA5A5; 
+    outline:0; 
+    height:25px; 
+    width: 275px; 
+  } 
+  .c{
+	padding-top: 50px; 
+	padding-right: 30px;  
+	padding-bottom: 50px; 
+	padding-left: 80px;
+}
+</style> 
+
+<body>
+<div class ="c" ng-controller="addBookCtrl" top-padding: 60px;>
+
+<form name="myForm">
+<p>Enter Book title:
+<input class="textbox" type="text" ng-pattern="/^[a-zA-Z0-9]*$/"  name="myName" ng-model="title" required>
+<span ng-show="myForm.book.title.$touched && myForm.book.title.$invalid">The name is required.</span>
+</p>
+
+<h3>1. Select Authors</h3>
+    <label for="a in authors">Multiple select:</label>
+    <select  ng-options=" a.authorName for a in authors" multiple ng-model="selectedAuthors">
+      <option ></option>
+    </select>
+    <br />
+    
+    <h3>2. Selecting Genre</h3>
+    <label for="g in genre">Multiple select:</label>
+    <select  ng-options=" g.genre_name for g in genre" multiple ng-model="selectedGenres">
+      <option ></option>
+    </select>
+    <br />
+    
+    <h3>3. Select Publisher</h3>
+    <label for="p in publisher">Multiple select:</label>
+    <select  ng-options=" p.publisherName for p in publisher" ng-model="selectedPublisher">
+      <option ></option>
+    </select>
+    <br />
+	<input type="submit" ng-click="addBook()" value="Add"/>
+
+
+</form>
+
+		
+</div>
+</body>

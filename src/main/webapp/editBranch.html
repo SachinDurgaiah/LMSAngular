@@ -1,0 +1,29 @@
+<style> 
+.textbox { 
+    border: 3px inset #FFA5A5; 
+    outline:0; 
+    height:25px; 
+    width: 275px; 
+ 
+  } 
+  .c{
+	padding-top: 50px; 
+	padding-right: 30px;  
+	padding-bottom: 50px; 
+	padding-left: 80px;
+}
+</style>
+
+<body>
+<div class="c" ng-controller="branchCtrl">
+
+
+	<form action="updateBranch" method="post">
+		Enter Branch Name		: <input class="textbox" type="text" name="name"  ng-model="branchs.branchName"  value="branchs.branchName" /></br><p>Minimum of 3 characters and  no special characters</p>
+		Enter Branch Address	: <input class="textbox" type="text" name="address" ng-model="branchs.branchAddress"  value="branchs.branchAddress" /></br><p>Minimum of 3 characters and  no special characters</p>
+		
+		<input type="hidden" value="{{branchs.branchId}}" ng-model="branchs.branchId" name="branchId" />
+		</br><input type="submit" ng-click="updateBranch()" value="Update"/>
+		</form>
+</div>
+</body>

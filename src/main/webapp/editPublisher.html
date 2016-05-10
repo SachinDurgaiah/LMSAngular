@@ -1,0 +1,29 @@
+<style> 
+.textbox { 
+    border: 3px inset #FFA5A5; 
+    outline:0; 
+    height:25px; 
+    width: 275px; 
+  } 
+  .c{
+	padding-top: 50px; 
+	padding-right: 30px;  
+	padding-bottom: 50px; 
+	padding-left: 80px;
+}
+</style>
+
+<body>
+<div class="c" ng-controller="publisherCtrl" top-padding: 40px;>
+
+
+	<form action="updatePublisher" method="get">
+		Enter Publisher Name	: <input class="textbox" type="text" name="name"  ng-model="publishers.publisherName"  value="publishers.publisherName"/></br>
+		Enter Publisher Address	: <input class="textbox" type="text" name="address"  ng-model="publishers.publisherAddress"  value="publishers.publisherAddress"/></br>
+		
+		<input type="hidden" value="publishers.publisherId" name="publisherId" />
+		</br><input type="submit" ng-click="updatePublisher()" value="Update"/>
+	</form>
+
+</div>
+</body>

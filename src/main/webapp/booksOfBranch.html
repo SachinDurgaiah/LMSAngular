@@ -1,0 +1,53 @@
+<style> 
+.textbox { 
+    border: 3px inset #FFA5A5; 
+    outline:0; 
+    height:25px; 
+    width: 275px; 
+  } 
+  .c{
+	padding-top: 50px; 
+	padding-right: 30px;  
+	padding-bottom: 50px; 
+	padding-left: 80px;
+}
+</style>
+
+<body>
+<div class="c" ng-controller="CheckOutCtrl">
+<dir-pagination-controls
+       max-size="5"
+       direction-links="true"
+       boundary-links="true" >
+</dir-pagination-controls>
+Search for Books : <input class="textbox" type="text" ng-model="searchBox" placeholder="Search for books ">
+<div class="row">
+	<div class="col-md-6">
+<table class="table border="2" id="bookTable" class="table">
+	<tr>
+		
+		<th>Book title</th>
+		
+		<th>Checkout</th>
+		
+	</tr>
+
+
+	<tr dir-paginate="buk in books123 | filter:searchBox | itemsPerPage:5">	
+		<td>{{buk.title}}</td>
+		
+		
+		<td><button class="btn btn-success" data-toggle="modal"
+				ng-click="borrowBook(buk.bookId)">CheckOut</button></td>
+	</tr>
+</table>
+</div>
+</div>
+
+<div id="myModal1" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content"></div>
+	</div>
+</div>
+</div>
+</body>

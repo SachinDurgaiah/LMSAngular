@@ -1,0 +1,29 @@
+<style> 
+.textbox { 
+    border: 3px inset #FFA5A5; 
+    outline:0; 
+    height:25px; 
+    width: 275px; 
+  } 
+  .c{
+	padding-top: 50px; 
+	padding-right: 30px;  
+	padding-bottom: 50px; 
+	padding-left: 80px;
+}
+</style>
+
+<body>
+<div class="c" ng-controller="borrowerCtrl">
+
+
+	<form action="editBorrower" method="post">
+		Enter Borrower Name   : <input class="textbox" type="text" name="Name"  ng-model="borrowers.name"  value="borrowers.name"/> </br>
+		Enter Borrower Address: <input class="textbox" type="text" name="Address"  ng-model="borrowers.address"  value="borrowers.address"/></br>
+		Enter Borrower Phone  : <input class="textbox" type="text" name="phone"  ng-model="borrowers.phone"  value="borrowers.phone"/></br>
+		<input type="hidden" value="{{borrowers.cardNo}}" name="cardNo" />
+		</br><input type="submit" ng-click="editBorrower()" value="Update"/>
+	</form>
+
+</div>
+</body>
